@@ -1,0 +1,13 @@
+name: Tutorial # 插件名字
+main: org.meowcat.bukkit.Main # 插件主类
+version: 1.0 # 插件版本号
+
+author: MlgmXyysd # 插件作者
+
+commands:
+  democmd:
+    description: "测试指令"
+    usage: /<command>
+    aliases: [demo,d]
+#    permission: "democmd.use"
+#    permission-message: "你没有使用这个指令的权限"
