@@ -1,0 +1,15 @@
+name: Diamond
+version: ${project.version}
+main: org.meowcat.bukkit_tutorial.diamond.Main
+api-version: 1.13
+commands:
+  diamond:
+    aliases:
+      - d
+permissions:
+  tutorial.diamond.*:
+    default: op
+    children:
+      tutorial.diamond.other: true
+  tutorial.diamond.other:
+    default: op
