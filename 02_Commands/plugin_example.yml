@@ -1,0 +1,108 @@
+# 这是一个完整的plugin.yml，所有的节点均已列出。
+
+# 插件名称，必须
+name: Example
+
+# 插件版本，必须
+version: 1.0.0
+
+# 插件介绍，可以分行，在执行"/version [插件名称]"时显示
+# 这是一个分行写的例子：
+# description: |
+#   A multi
+#   lined plugin
+#   description.
+description: A bukkit tutorial example plugin by MlgmXyysd.
+
+# 插件api版本
+# 只能为"1.13"或"1.14"
+api-version: 1.13
+
+# 插件加载时期
+# 只能为"STARTUP"或"POSTWORLD"，默认是"POSTWORLD"
+load: STARTUP
+
+# 插件作者信息
+author: MlgmXyysd
+
+# 插件作者信息，可以写多个
+# 必须为 YAML List 格式
+authors: [MlgmXyysd, MeowCat Studio]
+
+# 插件网站
+website: http://www.meowcat.org/
+
+# 插件主类，必须
+main: org.meowcat.bukkit_tutorial.example.Main
+
+# 插件是否使用数据库 true/false
+database: false
+
+# 前置插件，当服务器找不到前置插件时将不会加载这个插件
+# 必须为 YAML List 格式
+depend: [Tutorial, Tutorial_Maven]
+
+# 在控制台输出的日志前缀，默认是插件名称
+prefix: Tutorial
+
+# 软前置，插件将在这些插件加载之后才加载
+# 必须为 YAML List 格式
+softdepend: [OnePlugin, AnotherPlugin]
+
+# 当你的插件作为其他插件前置时使用，列出的插件将在这个插件加载之后才加载
+# 必须为 YAML List 格式
+loadbefore: [OnePlugin, AnotherPlugin]
+
+# 命令注册
+commands:
+
+  # /test 命令，必须
+  test:
+  
+    # 命令介绍
+    description: A command for test.
+    
+    # 命令别名
+    aliases: [demo, testcmd]
+    
+    # 命令所需权限
+    permission: tutorial.test
+    
+    # 没有权限时的提示，"<permission>"将替换为权限节点
+    permission-message: You do not have <permission>
+    
+    # 当方法返回 false 是的提示，可以分行，"<command>"将替换为命令
+    # 一个多行的例子：
+    # usage: |
+    #   /<command>
+    #   A multi-lined
+    #   usage.
+    usage: /<command>
+
+# 权限节点注册
+permissions:
+
+  # tutorial.* 权限
+  tutorial.*:
+  
+    # 权限节点介绍
+    description: Gives access to all commands
+    
+    # 权限给哪些玩家，默认为op
+    # 必须为"true"，"false"，"op"，"not op"
+    default: true
+    
+    # 子节点，拥有此权限的玩家将会获得以下节点权限
+    children:
+    
+      # 玩家将会获得tutorial.test权限
+      tutorial.test: true
+      
+      # 玩家将会失去tutorial.test1权限
+      tutorial.test1: false
+      
+  # tutorial.test 权限
+  tutorial.test:
+      
+  # tutorial.test1 权限
+  tutorial.test1:
